@@ -18,3 +18,6 @@ In the fourth tab the user can view and be inspired by others users’ favourite
 Technologies used:
 Java - Spring Boot (Backend)
 JavaScript - ReactJs (Frontend)
+
+
+![Screenshot (327)](https://user-images.githubusercontent.com/79806380/110343749-789b5580-8035-11eb-897c-b7baa8f0c0cc.png)
