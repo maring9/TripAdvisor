@@ -1,4 +1,4 @@
-# TripAdvisor
+# TripPlanner
 
 Stelian Fedorca / Getejanc Marin
 
