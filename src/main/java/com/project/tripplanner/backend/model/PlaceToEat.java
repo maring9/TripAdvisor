@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "places_to_eat")
-public class PlaceToEat extends PlaceToVisit {
+public class PlaceToEat {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,7 +18,6 @@ public class PlaceToEat extends PlaceToVisit {
     private String description ;
 
     public PlaceToEat(String title, String description) {
-        super(title, description);
         this.title = title;
         this.description = description;
     }

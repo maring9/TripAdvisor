@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "places_to_stay")
-public class PlaceToStay extends PlaceToVisit {
+public class PlaceToStay{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,22 +18,21 @@ public class PlaceToStay extends PlaceToVisit {
     private String description ;
 
     public PlaceToStay(String title, String description) {
-        super(title, description);
         this.title = title ;
         this.description = description;
     }
 
-    @Override
+
     public long getId() {
         return id;
     }
 
-    @Override
+
     public String getTitle() {
         return title;
     }
 
-    @Override
+
     public String getDescription() {
         return description;
     }
