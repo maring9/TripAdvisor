@@ -3,7 +3,7 @@ package com.project.tripplanner.backend.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="table_places_to_visit")
+@Table(name="places_to_visit")
 public class PlaceToVisit {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

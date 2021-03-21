@@ -3,7 +3,7 @@ package com.project.tripplanner.backend.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "table_places_to_eat")
+@Table(name = "places_to_eat")
 public class PlaceToEat extends PlaceToVisit {
 
     @Id
