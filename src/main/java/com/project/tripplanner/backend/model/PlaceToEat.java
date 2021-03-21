@@ -6,12 +6,6 @@ import javax.persistence.*;
 @Table(name = "table_places_to_eat")
 public class PlaceToEat extends PlaceToVisit {
 
-    public PlaceToEat(String title, String description) {
-        super(title, description);
-        this.title = title;
-        this.description = description;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -22,6 +16,13 @@ public class PlaceToEat extends PlaceToVisit {
 
     @Column(name = "description")
     private String description ;
+
+    public PlaceToEat(String title, String description) {
+        super(title, description);
+        this.title = title;
+        this.description = description;
+    }
+
 
     public long getId() {
         return id;
