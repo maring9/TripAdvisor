@@ -1,6 +1,6 @@
 package com.project.tripplanner.backend.controller;
 
-import com.google.api.Http;
+//import com.google.api.Http;
 import com.project.tripplanner.backend.model.PlaceToVisit;
 import com.project.tripplanner.backend.repository.PlaceToVisitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +19,8 @@ public class PlaceToVisitController {
     @Autowired
     private PlaceToVisitRepository placeToVisitRepository;
 
-    @GetMapping(value = "/places_to_visit")
-    public ResponseEntity<List<PlaceToVisit>> getAllPlacesToVisit(){
+    @GetMapping("/places_to_visit")
+    public ResponseEntity<List<PlaceToVisit>> getAllPlacesToVisit(@RequestParam(required = false) String title){
         try{
             List<PlaceToVisit> places = new ArrayList<>();
 

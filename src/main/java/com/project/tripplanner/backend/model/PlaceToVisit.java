@@ -16,6 +16,9 @@ public class PlaceToVisit {
     @Column(name = "description")
     private String description ;
 
+    public PlaceToVisit(){
+
+    }
 
     public PlaceToVisit(String title, String description) {
         this.title = title;
@@ -40,5 +43,10 @@ public class PlaceToVisit {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Place [id=" + id + ", title=" + title + ", desc=" + description + "]";
     }
 }

@@ -22,6 +22,10 @@ public class PlaceToEat {
         this.description = description;
     }
 
+    public PlaceToEat(){
+
+    }
+
 
     public long getId() {
         return id;
