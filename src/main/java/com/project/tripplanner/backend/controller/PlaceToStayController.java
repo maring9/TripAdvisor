@@ -20,6 +20,11 @@ public class PlaceToStayController {
     @Autowired
     private PlaceToStayRepository placeToStayRepository;
 
+//    @GetMapping("/")
+//    public void home(){
+//        System.out.println("welcome");
+//    }
+
     @GetMapping(value = "/places_to_stay")
     public ResponseEntity<List<PlaceToStay>> getAllPlacesToStay(){
         try{
