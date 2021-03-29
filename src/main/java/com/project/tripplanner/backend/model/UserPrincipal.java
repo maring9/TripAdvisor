@@ -23,20 +23,32 @@ public class UserPrincipal implements UserDetails {
     @JsonIgnore
     private String password;
 
-    private List<GrantedAuthority> grantedAuthorityList;
+    private Collection<? extends GrantedAuthority> grantedAuthorityList;
 
     public UserPrincipal(){}
 
-    public UserPrincipal(User user) {
-        this.id = user.getId();
-        this.username = user.getUsername();
-        this.email = user.getEmail();
-        this.password = user.getPassword();
-        grantedAuthorityList = user.getRoles().stream().map(role ->
-                new SimpleGrantedAuthority(role.getName().name())
-        ).collect(Collectors.toList());
+    public UserPrincipal(Long id, String username, String email, String password,
+                         Collection<? extends GrantedAuthority> authorities) {
+        this.id = id;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+        this.grantedAuthorityList = authorities;
     }
 
+    public static UserPrincipal build(User user) {
+        List<GrantedAuthority> authorities = user.getRoles().stream().map(role ->
+                new SimpleGrantedAuthority(role.getName().name())
+        ).collect(Collectors.toList());
+
+        return new UserPrincipal(
+                user.getId(),
+                user.getUsername(),
+                user.getEmail(),
+                user.getPassword(),
+                authorities
+        );
+    }
     public Long getId() {
         return id;
     }
@@ -62,7 +74,7 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
