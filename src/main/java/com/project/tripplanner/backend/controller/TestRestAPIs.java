@@ -24,4 +24,9 @@ public class TestRestAPIs {
     public String adminAccess() {
         return ">>> Admin Contents";
     }
+
+    @GetMapping("/api/home")
+    public String accessHome(){
+        return "welcome to home page";
+    }
 }
