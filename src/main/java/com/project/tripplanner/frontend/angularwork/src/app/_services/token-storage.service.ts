@@ -29,10 +29,11 @@ export class TokenStorageService {
 
   public getUser(): any {
     const user = window.sessionStorage.getItem(USER_KEY);
-    if (user) {
+    if (typeof user !== undefined) {
+      console.log(user)
       return JSON.parse(user);
     }
-
+   // console.log(user);
     return {};
   }
 }

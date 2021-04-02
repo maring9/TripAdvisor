@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
+  title = 'angularwork';
 
   constructor(private tokenStorageService: TokenStorageService) { }
 
