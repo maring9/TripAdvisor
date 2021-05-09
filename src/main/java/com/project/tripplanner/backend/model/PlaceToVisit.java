@@ -3,8 +3,9 @@ package com.project.tripplanner.backend.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="places_to_visit")
+@Table(name="place_to_visit")
 public class PlaceToVisit {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
@@ -15,6 +16,9 @@ public class PlaceToVisit {
 
     @Column(name = "description")
     private String description ;
+
+    @Column(name = "rating")
+    private int rating;
 
     public PlaceToVisit(){
 
