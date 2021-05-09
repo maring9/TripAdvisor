@@ -20,6 +20,10 @@ public class PlaceToVisit {
     @Column(name = "rating")
     private int rating;
 
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @JoinColumn(name = "city_id", nullable = false)
+    private City city;
+
     public PlaceToVisit(){
 
     }
