@@ -9,7 +9,7 @@ import java.util.Set;
 public class City {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "name")
@@ -29,11 +29,23 @@ public class City {
         return id;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<PlaceToVisit> getPlaceToVisit() {
+        return placeToVisit;
+    }
+
+    public void setPlaceToVisit(Set<PlaceToVisit> placeToVisit) {
+        this.placeToVisit = placeToVisit;
     }
 }
