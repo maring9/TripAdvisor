@@ -19,12 +19,12 @@ public class PlaceToVisitController {
     @Autowired
     private PlaceToVisitRepository placeToVisitRepository;
 
-    @GetMapping("/places_to_visit")
-    public ResponseEntity<List<PlaceToVisit>> getAllPlacesToVisit(@RequestParam(required = false) String title){
+    @GetMapping("/city={city_name}/places_to_visit")
+    public ResponseEntity<List<PlaceToVisit>> getAllPlacesToVisit(@PathVariable String city_name){
         try{
             List<PlaceToVisit> places = new ArrayList<>();
 
-            places.addAll(placeToVisitRepository.findAll());
+            places.addAll(placeToVisitRepository.findByCityName(city_name));
 
             if(places.isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -36,6 +36,7 @@ public class PlaceToVisitController {
         }
     }
 
+    //for testing
     @PostMapping("/places_to_visit")
     public ResponseEntity<PlaceToVisit> createPlace(@RequestBody PlaceToVisit place){
         try{

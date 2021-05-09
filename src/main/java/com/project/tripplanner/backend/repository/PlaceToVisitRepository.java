@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface PlaceToVisitRepository extends JpaRepository<PlaceToVisit,Long> {
     List<PlaceToVisit> findByCity(City city);
+    List<PlaceToVisit> findByCityId(long cityId);
+    List<PlaceToVisit> findByCityName(String cityName);
 }

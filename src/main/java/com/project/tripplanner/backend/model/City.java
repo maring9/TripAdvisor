@@ -48,4 +48,6 @@ public class City {
     public void setPlaceToVisit(Set<PlaceToVisit> placeToVisit) {
         this.placeToVisit = placeToVisit;
     }
+
+
 }

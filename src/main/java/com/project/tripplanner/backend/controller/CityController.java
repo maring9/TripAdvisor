@@ -20,10 +20,11 @@ public class CityController {
         this.placeToVisitRepository = placeToVisitRepository;
     }
 
-    @GetMapping("/search_city/{name}")
-    public boolean searchForCity(@PathVariable String name){
-        return cityRepository.findByName(name);
-    }
+//    @GetMapping("/search_city/{name}")
+//    public String searchForCity(@PathVariable String name){
+//        City returnedCity = cityRepository.findByName(name);
+//        return returnedCity.getPlaceToVisit().toString();
+//    }
 
 
 }
