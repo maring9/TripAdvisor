@@ -5,10 +5,7 @@ import com.project.tripplanner.backend.repository.CityRepository;
 import com.project.tripplanner.backend.repository.PlaceToVisitRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
@@ -21,6 +18,11 @@ public class CityController {
     public CityController(CityRepository cityRepository,PlaceToVisitRepository placeToVisitRepository){
         this.cityRepository = cityRepository;
         this.placeToVisitRepository = placeToVisitRepository;
+    }
+
+    @GetMapping("/search_city/{name}")
+    public boolean searchForCity(@PathVariable String name){
+        return cityRepository.findByName(name);
     }
 
 
