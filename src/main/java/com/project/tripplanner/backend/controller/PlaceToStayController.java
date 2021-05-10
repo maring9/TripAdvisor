@@ -30,7 +30,7 @@ public class PlaceToStayController {
         try{
             List<PlaceToStay> places = new ArrayList<>();
 
-            places.addAll(placeToStayRepository.findPlacesByCityName(cityName));
+            places.addAll(placeToStayRepository.findByCityName(cityName));
 
             if(places.isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);

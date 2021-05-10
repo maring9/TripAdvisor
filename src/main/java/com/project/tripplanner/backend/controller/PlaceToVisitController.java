@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:8081")
 @RestController
@@ -35,6 +36,16 @@ public class PlaceToVisitController {
             return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+//    @PostMapping("/user_id={user_id}/locationId={location_id}/updateLocationToVisit")
+//    public void updateLocation(@PathVariable long location_id,long user_id){
+//        Optional<PlaceToVisit> placeToVisit = placeToVisitRepository.findById(location_id);
+//       // User user = userRepository.findById(user_id);
+//        userRepository.updateBookmarksLocationToVisit(user_id,location_id);
+//        if(placeToVisit.isBookmarked()){
+//            placeToVisit.setBookmark(true);
+//        }
+//    }
 
     //for testing
     @PostMapping("/places_to_visit")

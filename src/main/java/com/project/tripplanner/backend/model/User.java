@@ -39,9 +39,10 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    //lista1 de stringuri - visit
-    //lista2 eat
-    //lista3 stay
+
+    //lista1 de obiecte - visit
+    //lista2 de obiecte eat
+    //lista3 de obiecte stay
 
     public User(){}
 

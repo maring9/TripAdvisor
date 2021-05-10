@@ -1,5 +1,7 @@
 package com.project.tripplanner.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 @Entity
@@ -7,7 +9,7 @@ import javax.persistence.*;
 public class PlaceToEat {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id ;
 
@@ -17,6 +19,14 @@ public class PlaceToEat {
     @Column(name = "description")
     private String description ;
 
+    @ManyToOne(fetch = FetchType.LAZY,optional = false)
+    @JoinColumn(name = "city_id")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private City city;
+
+    @Column(name = "rating")
+    private int rating;
+
     public PlaceToEat(String title, String description) {
         this.title = title;
         this.description = description;
@@ -25,7 +35,13 @@ public class PlaceToEat {
     public PlaceToEat(){
 
     }
+    public City getCity() {
+        return city;
+    }
 
+    public void setCity(City city) {
+        this.city = city;
+    }
 
     public long getId() {
         return id;
@@ -37,5 +53,23 @@ public class PlaceToEat {
 
     public String getDescription() {
         return description;
+    }
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setRating(int rating) {
+        this.rating = rating;
+    }
+
+    @Override
+    public String toString() {
+        return "PlaceToEat{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", city=" + city +
+                '}';
     }
 }

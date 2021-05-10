@@ -18,6 +18,12 @@ public class City {
     @OneToMany(mappedBy = "city",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     private Set<PlaceToVisit> placeToVisit = new HashSet<>();
 
+    @OneToMany(mappedBy = "city",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Set<PlaceToStay> placeToStay = new HashSet<>();
+
+    @OneToMany(mappedBy = "city",fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    private Set<PlaceToEat> placeToEat = new HashSet<>();
+
     public City() {
     }
 
