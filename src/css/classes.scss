@@ -1,0 +1,51 @@
+@import "./vars";
+
+.grey {
+  color: $grey;
+}
+
+.black {
+  color: $black;
+}
+
+.green {
+  color: $green;
+}
+
+.flex-h-center {
+  display: flex;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-v-center {
+  display: flex;
+  justify-content: center;
+}
+
+.button-without-style {
+  all: unset;
+  cursor: pointer;
+}
+
+
+.oauth-button {
+  min-width: 200px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  outline: none;
+  font-size: 13px;
+  font-weight: normal;
+  line-height: 1.15384615;
+  color: #FFFFFF;
+  margin: 5px;
+}

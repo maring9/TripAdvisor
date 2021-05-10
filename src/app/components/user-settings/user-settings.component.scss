@@ -1,0 +1,14 @@
+@import "src/css/vars";
+
+.profile-picture {
+  display: inline-block;
+  clip-path: circle();
+}
+
+.letters {
+  letter-spacing: .2px;
+  padding: 5px;
+
+  background-color: $green;
+  color: $black;
+}

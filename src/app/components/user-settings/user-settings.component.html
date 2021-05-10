@@ -1,0 +1,8 @@
+<div class="profile-picture"
+     [style.width.px]="picture?.width || 'auto'"
+     [style.height.px]="picture?.height || 'auto'"
+     [class.letters]="!picture?.url"
+>
+  <img [src]="picture?.url" alt="profile picture" *ngIf="picture?.url; else initialsPicture">
+  <ng-template #initialsPicture>{{initials}}</ng-template>
+</div>

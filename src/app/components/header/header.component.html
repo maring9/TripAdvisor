@@ -1,0 +1,14 @@
+<div class="my-container">
+  <div class="flex-h-center">
+    <div>
+      <a routerLink="/" style="text-decoration: none">
+        <span style="font-weight: bold; color: #FFF">trip</span>
+        <span class="grey"><i>advisor</i></span>
+      </a>
+      <span class="vertical-line"></span>
+      <span class="green">City's name</span>
+    </div>
+  </div>
+
+    <app-user-settings [picture]="(auth.getUserData() | async)?.response.picture.data" *ngIf="auth.getUserData() | async"></app-user-settings>
+</div>
