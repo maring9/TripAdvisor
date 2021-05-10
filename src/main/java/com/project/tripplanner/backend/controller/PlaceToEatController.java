@@ -19,12 +19,12 @@ public class PlaceToEatController {
     @Autowired
     private PlaceToEatRepository placeToEatRepository;
 
-    @GetMapping(value = "/places_to_eat")
-    public ResponseEntity<List<PlaceToEat>> getAllPlacesToEat(){
+    @GetMapping(value = "/city={city_name}/places_to_eat")
+    public ResponseEntity<List<PlaceToEat>> getAllPlacesToEat(@PathVariable String cityName){
         try{
             List<PlaceToEat> places = new ArrayList<>();
 
-            places.addAll(placeToEatRepository.findAll());
+            places.addAll(placeToEatRepository.findPlacesByCityName(cityName));
 
             if(places.isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);

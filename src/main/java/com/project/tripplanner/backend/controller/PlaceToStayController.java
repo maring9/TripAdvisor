@@ -25,12 +25,12 @@ public class PlaceToStayController {
 //        System.out.println("welcome");
 //    }
 
-    @GetMapping(value = "/places_to_stay")
-    public ResponseEntity<List<PlaceToStay>> getAllPlacesToStay(){
+    @GetMapping(value = "/city={city_name}/places_to_stay")
+    public ResponseEntity<List<PlaceToStay>> getAllPlacesToStay(@PathVariable String cityName){
         try{
             List<PlaceToStay> places = new ArrayList<>();
 
-            places.addAll(placeToStayRepository.findAll());
+            places.addAll(placeToStayRepository.findPlacesByCityName(cityName));
 
             if(places.isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
