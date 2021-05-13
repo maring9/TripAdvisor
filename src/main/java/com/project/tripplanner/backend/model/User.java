@@ -39,6 +39,8 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
+    @OneToOne(mappedBy = "userId")
+    private Bookmark bookmark;
 
     //lista1 de obiecte - visit
     //lista2 de obiecte eat
