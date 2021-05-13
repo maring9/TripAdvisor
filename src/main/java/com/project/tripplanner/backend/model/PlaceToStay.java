@@ -20,7 +20,7 @@ public class PlaceToStay{
     private String description ;
 
     @Column(name = "rating")
-    private int rating;
+    private Integer rating;
 
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "city_id")
@@ -57,7 +57,7 @@ public class PlaceToStay{
         return description;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 

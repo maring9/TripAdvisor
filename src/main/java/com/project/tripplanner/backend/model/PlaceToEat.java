@@ -25,7 +25,7 @@ public class PlaceToEat {
     private City city;
 
     @Column(name = "rating")
-    private int rating;
+    private Integer rating;
 
     public PlaceToEat(String title, String description) {
         this.title = title;
@@ -55,7 +55,7 @@ public class PlaceToEat {
         return description;
     }
 
-    public int getRating() {
+    public Integer getRating() {
         return rating;
     }
 

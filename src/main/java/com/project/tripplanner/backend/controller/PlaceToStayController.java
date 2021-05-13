@@ -25,7 +25,7 @@ public class PlaceToStayController {
 //        System.out.println("welcome");
 //    }
 
-    @GetMapping(value = "/city={city_name}/places_to_stay")
+    @GetMapping(value = "/city={cityName}/places_to_stay")
     public ResponseEntity<List<PlaceToStay>> getAllPlacesToStay(@PathVariable String cityName){
         try{
             List<PlaceToStay> places = new ArrayList<>();
