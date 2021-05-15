@@ -1,5 +1,10 @@
 package com.project.tripplanner.backend.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import net.minidev.json.annotate.JsonIgnore;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import javax.persistence.*;
 import java.awt.print.Book;
 
@@ -14,15 +19,17 @@ public class Bookmark {
     @Column(name = "locationName")
     private String locationName;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id",referencedColumnName = "id")
-    private User userId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id",nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @JsonIgnore
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+    private User user;
 
     public Bookmark(){}
 
-    public Bookmark(String locationName, User userId) {
+    public Bookmark(String locationName) {
         this.locationName = locationName;
-        this.userId = userId;
     }
 
     public String getLocationName() {
@@ -33,11 +40,11 @@ public class Bookmark {
         this.locationName = locationName;
     }
 
-    public User getUserId() {
-        return userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public void setUserId(User userId) {
-        this.userId = userId;
+    public User getUser() {
+        return user;
     }
 }

@@ -10,6 +10,7 @@ import com.project.tripplanner.backend.message.response.JwtResponse;
 import com.project.tripplanner.backend.model.Role;
 import com.project.tripplanner.backend.model.RoleName;
 import com.project.tripplanner.backend.model.User;
+import com.project.tripplanner.backend.model.UserPrincipal;
 import com.project.tripplanner.backend.repository.RoleRepository;
 import com.project.tripplanner.backend.repository.UserRepository;
 import com.project.tripplanner.backend.security.JwtProvider;
@@ -59,9 +60,9 @@ public class AuthRestAPIs {
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
         String jwt = jwtProvider.generateJwtToken(authentication);
-        UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        UserPrincipal userDetails = (UserPrincipal) authentication.getPrincipal();
 
-        return ResponseEntity.ok(new JwtResponse(jwt, userDetails.getUsername(), userDetails.getAuthorities()));
+        return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getId(), userDetails.getUsername(), userDetails.getAuthorities()));
     }
 
 //    @Transactional

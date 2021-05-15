@@ -4,6 +4,7 @@ package com.project.tripplanner.backend.model;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -39,8 +40,9 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles = new HashSet<>();
 
-    @OneToOne(mappedBy = "userId")
-    private Bookmark bookmark;
+//    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinColumn
+//    private List<Bookmark> bookmarks = new ArrayList<>();
 
     //lista1 de obiecte - visit
     //lista2 de obiecte eat

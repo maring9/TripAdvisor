@@ -11,6 +11,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /* JwtProvider is an util class, it implements useful functions:
  - generate a JWT token
@@ -29,9 +30,12 @@ public class JwtProvider {
     public String generateJwtToken(Authentication authentication) {
 
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();
+        HashMap<String,Object> claims = new HashMap<>();
+        claims.put("id",userPrincipal.getId());
 
         return Jwts.builder()
                 .setSubject((userPrincipal.getUsername()))
+                .setClaims(claims)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date((new Date()).getTime() + jwtExpiration* 1000L))
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
