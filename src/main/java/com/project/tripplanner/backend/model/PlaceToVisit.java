@@ -21,6 +21,10 @@ public class PlaceToVisit {
     @Column(name = "rating")
     private Integer rating;
 
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    private byte[] image;
+
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "city_id")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -33,6 +37,14 @@ public class PlaceToVisit {
     public PlaceToVisit(String title, String description) {
         this.title = title;
         this.description = description;
+    }
+
+    public byte[] getImage() {
+        return image;
+    }
+
+    public void setImage(byte[] image) {
+        this.image = image;
     }
 
     public long getId() {

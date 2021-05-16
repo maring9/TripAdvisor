@@ -27,7 +27,7 @@ public class UserPrincipal implements UserDetails {
 
     public UserPrincipal(){}
 
-    public UserPrincipal(Long id, String username, String email, String password,
+    public UserPrincipal(String username,long id, String email, String password,
                          Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
         this.username = username;
@@ -42,8 +42,8 @@ public class UserPrincipal implements UserDetails {
         ).collect(Collectors.toList());
 
         return new UserPrincipal(
-                user.getId(),
                 user.getUsername(),
+                user.getId(),
                 user.getEmail(),
                 user.getPassword(),
                 authorities

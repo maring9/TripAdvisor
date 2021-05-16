@@ -34,8 +34,8 @@ public class JwtProvider {
         claims.put("id",userPrincipal.getId());
 
         return Jwts.builder()
-                .setSubject((userPrincipal.getUsername()))
                 .setClaims(claims)
+                .setSubject((userPrincipal.getUsername()))
                 .setIssuedAt(new Date())
                 .setExpiration(new Date((new Date()).getTime() + jwtExpiration* 1000L))
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)

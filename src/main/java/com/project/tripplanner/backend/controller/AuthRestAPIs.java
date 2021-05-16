@@ -62,7 +62,7 @@ public class AuthRestAPIs {
         String jwt = jwtProvider.generateJwtToken(authentication);
         UserPrincipal userDetails = (UserPrincipal) authentication.getPrincipal();
 
-        return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getId(), userDetails.getUsername(), userDetails.getAuthorities()));
+        return ResponseEntity.ok(new JwtResponse(jwt,userDetails.getId(),userDetails.getUsername(), userDetails.getAuthorities()));
     }
 
 //    @Transactional

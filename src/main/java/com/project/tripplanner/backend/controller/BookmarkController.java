@@ -41,8 +41,14 @@ public class BookmarkController {
 
     @Transactional
     @GetMapping("/{userId}/getInspired")
-    public List<Bookmark> getAllBookmarks(@PathVariable long userId){
+    public List<Bookmark> getOtherUsersBookmarks(@PathVariable long userId){
         return bookmarkRepository.getAllBookmarks(userId);
+    }
+
+    @Transactional
+    @GetMapping("/userId/getUserBookmarks")
+    public List<Bookmark> getUserBookmarks(@PathVariable long userId){
+        return bookmarkRepository.findByUserId(userId);
     }
 
 

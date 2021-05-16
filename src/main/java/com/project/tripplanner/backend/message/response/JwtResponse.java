@@ -11,7 +11,7 @@ public class JwtResponse {
     private long userId ;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public JwtResponse(String accessToken,long userId, String username, Collection<? extends GrantedAuthority> authorities) {
+    public JwtResponse(String accessToken,long userId,String username, Collection<? extends GrantedAuthority> authorities) {
         this.token = accessToken;
         this.username = username;
         this.authorities = authorities;
@@ -50,4 +50,7 @@ public class JwtResponse {
         this.type = tokenType;
     }
 
+    public long getUserId() {
+        return userId;
     }
+}

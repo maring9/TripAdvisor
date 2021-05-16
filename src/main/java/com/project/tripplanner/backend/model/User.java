@@ -44,9 +44,6 @@ public class User {
 //    @JoinColumn
 //    private List<Bookmark> bookmarks = new ArrayList<>();
 
-    //lista1 de obiecte - visit
-    //lista2 de obiecte eat
-    //lista3 de obiecte stay
 
     public User(){}
 

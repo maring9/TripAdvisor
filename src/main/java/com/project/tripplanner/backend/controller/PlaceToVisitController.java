@@ -47,14 +47,14 @@ public class PlaceToVisitController {
         }
     }
 
-    @GetMapping("*/places_to_visit/addToBookmark/{locationName}")
-    public ResponseEntity<Boolean> addToBookmark(@PathVariable String locationName){
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        Object obj = auth.getDetails();
-        System.out.println(obj);
-
-        return new ResponseEntity<>(true,HttpStatus.OK);
-    }
+//    @GetMapping("*/places_to_visit/addToBookmark/{locationName}")
+//    public ResponseEntity<Boolean> addToBookmark(@PathVariable String locationName){
+//        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//        Object obj = auth.getDetails();
+//        System.out.println(obj);
+//
+//        return new ResponseEntity<>(true,HttpStatus.OK);
+//    }
 
 //    @PostMapping("/user_id={user_id}/locationId={location_id}/updateLocationToVisit")
 //    public void updateLocation(@PathVariable long location_id,long user_id){

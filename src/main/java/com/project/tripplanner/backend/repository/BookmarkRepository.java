@@ -11,9 +11,9 @@ import java.util.List;
 public interface BookmarkRepository extends JpaRepository<Bookmark,Long> {
     List<Bookmark> findByUserId(long userId);
 
-    @Query(value = "SELECT * from bookmarks b where b.user_id !=:nume",
+    @Query(value = "SELECT * from bookmarks b where b.user_id !=:user_id",
     nativeQuery = true)
-    List<Bookmark> getAllBookmarks(@Param("nume") long userId);
+    List<Bookmark> getAllBookmarks(@Param("user_id") long userId);
 }
 
 //    @Query("select t from TableName t where (status = :status1 and num = :num1 or status = :status2 and num = :num2)")
