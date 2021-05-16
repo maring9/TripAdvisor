@@ -20,13 +20,14 @@ import {LocationCardComponent} from './components/location-card/location-card.co
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LoginFormComponent} from './components/login-form/login-form.component';
 import {RegisterFormComponent} from './components/register-form/register-form.component';
 import {MatIconModule} from '@angular/material/icon';
 import {FacebookButtonComponent} from './components/facebook-button/facebook-button.component';
 import {GoogleLoginButtonComponent} from './components/google-login-button/google-login-button.component';
 import {environment} from 'src/environments/environment';
+import { LoginContainerComponent } from './components/login-container/login-container.component';
 
 
 const socialLoginProvider: Provider = {
@@ -67,6 +68,7 @@ const socialLoginProvider: Provider = {
     RegisterFormComponent,
     FacebookButtonComponent,
     GoogleLoginButtonComponent,
+    LoginContainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -79,6 +81,7 @@ const socialLoginProvider: Provider = {
     MatIconModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     socialLoginProvider

@@ -1,0 +1,19 @@
+@import "src/css/vars";
+
+::ng-deep {
+  body {
+    background-color: #3c4146;
+  }
+}
+
+mat-card {
+  width: 300px;
+  padding: 30px;
+}
+
+.or {
+  color: $grey;
+  width: 100%;
+  font-weight: 600;
+  text-align: center;
+}
