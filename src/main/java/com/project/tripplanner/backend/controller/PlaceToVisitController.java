@@ -66,15 +66,15 @@ public class PlaceToVisitController {
 //        }
 //    }
 
-    //for testing
-    @PostMapping("/places_to_visit")
-    public ResponseEntity<PlaceToVisit> createPlace(@RequestBody PlaceToVisit place){
-        try{
-            PlaceToVisit placeToVisit = placeToVisitRepository.save(new PlaceToVisit(place.getTitle(),place.getDescription()));
-            return new ResponseEntity<>(placeToVisit,HttpStatus.CREATED);
-        }catch (Exception e){
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
-    }
+//    //for testing
+//    @PostMapping("/places_to_visit")
+//    public ResponseEntity<PlaceToVisit> createPlace(@RequestBody PlaceToVisit place){
+//        try{
+//            PlaceToVisit placeToVisit = placeToVisitRepository.save(new PlaceToVisit(place.getTitle(),place.getDescription()));
+//            return new ResponseEntity<>(placeToVisit,HttpStatus.CREATED);
+//        }catch (Exception e){
+//            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//
+//    }
 }

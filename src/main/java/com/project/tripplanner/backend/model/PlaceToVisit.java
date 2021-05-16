@@ -22,7 +22,7 @@ public class PlaceToVisit {
     private Integer rating;
 
     @Lob
-    @Basic(fetch = FetchType.LAZY)
+//    @Basic(fetch = FetchType.LAZY)
     private byte[] image;
 
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
@@ -34,9 +34,10 @@ public class PlaceToVisit {
 
     }
 
-    public PlaceToVisit(String title, String description) {
+    public PlaceToVisit(String title, String description,City city) {
         this.title = title;
         this.description = description;
+        this.city = city;
     }
 
     public byte[] getImage() {

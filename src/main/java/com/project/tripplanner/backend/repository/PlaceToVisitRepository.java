@@ -14,4 +14,6 @@ public interface PlaceToVisitRepository extends JpaRepository<PlaceToVisit,Long>
 
     List<PlaceToVisit> findByCityName(String cityName);
 
+    PlaceToVisit findByTitle(String title);
+
 }
