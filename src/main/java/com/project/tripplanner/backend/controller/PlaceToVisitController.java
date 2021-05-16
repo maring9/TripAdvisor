@@ -54,7 +54,6 @@ public class PlaceToVisitController {
     public File getImage(@RequestBody String imagePath){
         try {
            return new File(imagePath);
-
         } catch (Exception e) {
             e.printStackTrace();
             return null;

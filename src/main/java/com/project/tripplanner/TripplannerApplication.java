@@ -2,8 +2,10 @@ package com.project.tripplanner;
 
 import com.project.tripplanner.backend.model.City;
 import com.project.tripplanner.backend.model.PlaceToVisit;
+import com.project.tripplanner.backend.model.User;
 import com.project.tripplanner.backend.repository.CityRepository;
 import com.project.tripplanner.backend.repository.PlaceToVisitRepository;
+import com.project.tripplanner.backend.repository.UserRepository;
 import com.project.tripplanner.backend.service.LocationService;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +24,27 @@ public class TripplannerApplication {
 	@Autowired
 	private PlaceToVisitRepository placeToVisitRepository;
 
+	@Autowired
+	private UserRepository userRepository;
+
 	public static void main(String[] args) {
 		SpringApplication.run(TripplannerApplication.class, args);
 
 
 	}
 
-//	@Bean
-//	InitializingBean sendDatabase() {
-//		return () -> {
-////			City praga = new City("Praga");
-////			repo.save(praga);
-////			PlaceToVisit paris = placeToVisitRepository.findByTitle("Paris");
-//
+	@Bean
+	InitializingBean sendDatabase() {
+		return () -> {
+//			City praga = new City("Praga");
+//			repo.save(praga);
+
+			User user = new User("username",
+					"email@gmail.com","123456");
+			userRepository.save(user);
+
+//			PlaceToVisit paris = placeToVisitRepository.findByTitle("Paris");
+
 //			PlaceToVisit podCarol = new PlaceToVisit("podCarol",
 //					"descriere podCarol",repo.findByName("Praga"));
 //
@@ -44,7 +54,7 @@ public class TripplannerApplication {
 //			LocationService.getImage(podCarol);
 ////			placeToVisitRepository.save(new PlaceToVisit("titlu demo",
 ////					"descriere demo",repo.findByName("Praga")));
-//		};
-//	}
+		};
+	}
 
 }
