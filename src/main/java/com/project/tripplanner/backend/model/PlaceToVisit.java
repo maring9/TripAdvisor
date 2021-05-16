@@ -21,7 +21,7 @@ public class PlaceToVisit {
     @Column(name = "rating")
     private Integer rating;
 
-    @Lob
+//    @Lob
 //    @Basic(fetch = FetchType.LAZY)
     private String image;
 

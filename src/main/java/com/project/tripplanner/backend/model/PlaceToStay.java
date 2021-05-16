@@ -22,6 +22,8 @@ public class PlaceToStay{
     @Column(name = "rating")
     private Integer rating;
 
+    private String image;
+
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "city_id")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
@@ -35,6 +37,27 @@ public class PlaceToStay{
     public PlaceToStay(){
 
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public City getCity() {
         return city;
     }

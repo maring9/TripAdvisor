@@ -27,6 +27,9 @@ public class PlaceToEat {
     @Column(name = "rating")
     private Integer rating;
 
+    private String image;
+
+
     public PlaceToEat(String title, String description) {
         this.title = title;
         this.description = description;
@@ -35,6 +38,27 @@ public class PlaceToEat {
     public PlaceToEat(){
 
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public void setRating(Integer rating) {
+        this.rating = rating;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public City getCity() {
         return city;
     }
