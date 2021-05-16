@@ -28,23 +28,23 @@ public class TripplannerApplication {
 
 	}
 
-	@Bean
-	InitializingBean sendDatabase() {
-		return () -> {
-//			City praga = new City("Praga");
-//			repo.save(praga);
-//			PlaceToVisit paris = placeToVisitRepository.findByTitle("Paris");
-
-			PlaceToVisit podCarol = new PlaceToVisit("podCarol",
-					"descriere podCarol",repo.findByName("Praga"));
-
-			LocationService.uploadImage(podCarol,"podCarol.jpg");
-			placeToVisitRepository.save(podCarol);
-
-			LocationService.getImage(podCarol);
-//			placeToVisitRepository.save(new PlaceToVisit("titlu demo",
-//					"descriere demo",repo.findByName("Praga")));
-		};
-	}
+//	@Bean
+//	InitializingBean sendDatabase() {
+//		return () -> {
+////			City praga = new City("Praga");
+////			repo.save(praga);
+////			PlaceToVisit paris = placeToVisitRepository.findByTitle("Paris");
+//
+//			PlaceToVisit podCarol = new PlaceToVisit("podCarol",
+//					"descriere podCarol",repo.findByName("Praga"));
+//
+//			LocationService.uploadImage(podCarol,"podCarol.jpg");
+//			placeToVisitRepository.save(podCarol);
+//
+//			LocationService.getImage(podCarol);
+////			placeToVisitRepository.save(new PlaceToVisit("titlu demo",
+////					"descriere demo",repo.findByName("Praga")));
+//		};
+//	}
 
 }

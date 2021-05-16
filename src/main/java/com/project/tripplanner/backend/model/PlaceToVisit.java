@@ -23,7 +23,7 @@ public class PlaceToVisit {
 
     @Lob
 //    @Basic(fetch = FetchType.LAZY)
-    private byte[] image;
+    private String image;
 
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "city_id")
@@ -40,11 +40,11 @@ public class PlaceToVisit {
         this.city = city;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

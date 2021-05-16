@@ -14,6 +14,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.awt.print.Book;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,6 +47,17 @@ public class PlaceToVisitController {
             return new ResponseEntity<>(places,HttpStatus.OK);
         }catch (Exception e){
             return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @GetMapping("/places_to_visit/getImage")
+    public File getImage(@RequestBody String imagePath){
+        try {
+           return new File(imagePath);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 
