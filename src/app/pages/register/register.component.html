@@ -1,6 +1,6 @@
 <div class="mt-4 container justify-content-center">
   <mat-card class="container justify-content-center">
-    <app-login-container></app-login-container>
+    <app-register-container></app-register-container>
     <div class="or pb-3">
       <span>OR</span>
     </div>
@@ -11,7 +11,7 @@
       <app-google-login-button (click)="auth.signInWithGoogle()"></app-google-login-button>
     </div>
     <div class="mb-3">
-      <span>Don't have an account?</span><a routerLink="/auth/register">Sign up</a>
+      <span>Already have an account?</span><a routerLink="/auth/login">Sign in</a>
     </div>
   </mat-card>
 </div>
