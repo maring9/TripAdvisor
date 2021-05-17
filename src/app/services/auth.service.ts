@@ -23,12 +23,12 @@ export class AuthService {
               private router: Router) {
     this.getUserData().subscribe(t => {
       this.isAuthSubject.next(!!t);
-      console.log(t);
-      console.log('init');
+      // console.log(t);
+      // console.log('init');
     });
 
     this.isAuth$.subscribe(async isAuth => {
-      console.log('update:', isAuth);
+      // console.log('update:', isAuth);
       if (isAuth) {
         await router.navigate(['/']);
       } else {

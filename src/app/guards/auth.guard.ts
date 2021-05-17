@@ -18,7 +18,7 @@ export class AuthGuard implements CanActivate {
     return this.auth.isAuth$.pipe(
       map(canActivate => requireAuth === undefined ? canActivate : !canActivate),
       tap(canActivate => {
-        console.log({requireAuth}, canActivate, state.url);
+        // console.log({requireAuth}, canActivate, state.url);
         if (!canActivate) {
           this.router.navigate(['/', 'auth', 'login']);
         }

@@ -10,6 +10,12 @@ import {Router} from '@angular/router';
 })
 export class RegisterContainerComponent implements OnInit {
 
+  public user = {
+    username: '',
+    email: '',
+    password: '',
+  };
+
   constructor(private auth: AuthService, private router: Router) {
   }
 
