@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,16 +44,23 @@ public class PlaceToStayController {
             return new ResponseEntity<>(null,HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
-
-    @PostMapping("/places_to_stay")
-    public ResponseEntity<PlaceToStay> createPlace(@RequestBody PlaceToStay place){
-        try{
-            PlaceToStay placeToStay = placeToStayRepository.save(new PlaceToStay(place.getTitle(),place.getDescription()));
-            return new ResponseEntity<>(placeToStay,HttpStatus.CREATED);
-        }catch (Exception e){
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-
+    @GetMapping("*/places_to_stay/{image_name}/getImage")
+    public File getImage(@PathVariable String image_name){
+        System.out.println(image_name);
+        return new File("/resources/images/" + image_name);
     }
+
+
+
+//    @PostMapping("/places_to_stay")
+//    public ResponseEntity<PlaceToStay> createPlace(@RequestBody PlaceToStay place){
+//        try{
+//            PlaceToStay placeToStay = placeToStayRepository.save(new PlaceToStay(place.getTitle(),place.getDescription()));
+//            return new ResponseEntity<>(placeToStay,HttpStatus.CREATED);
+//        }catch (Exception e){
+//            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+//        }
+//
+//    }
 
 }

@@ -13,7 +13,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.CacheControl;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import java.util.concurrent.TimeUnit;
 
 @SpringBootApplication
 public class TripplannerApplication {
@@ -33,28 +38,29 @@ public class TripplannerApplication {
 
 	}
 
-	@Bean
-	InitializingBean sendDatabase() {
-		return () -> {
-//			City praga = new City("Praga");
-//			repo.save(praga);
 
-			User user = new User("username2",
-					"username2@gmail.com","123456");
-			userRepository.save(user);
-
-//			PlaceToVisit paris = placeToVisitRepository.findByTitle("Paris");
-
-//			PlaceToVisit podCarol = new PlaceToVisit("podCarol",
-//					"descriere podCarol",repo.findByName("Praga"));
+//	@Bean
+//	InitializingBean sendDatabase() {
+//		return () -> {
+////			City praga = new City("Praga");
+////			repo.save(praga);
 //
-//			LocationService.uploadImage(podCarol,"podCarol.jpg");
-//			placeToVisitRepository.save(podCarol);
+//			User user = new User("username2",
+//					"username2@gmail.com","123456");
+//			userRepository.save(user);
 //
-//			LocationService.getImage(podCarol);
-////			placeToVisitRepository.save(new PlaceToVisit("titlu demo",
-////					"descriere demo",repo.findByName("Praga")));
-		};
-	}
+////			PlaceToVisit paris = placeToVisitRepository.findByTitle("Paris");
+//
+////			PlaceToVisit podCarol = new PlaceToVisit("podCarol",
+////					"descriere podCarol",repo.findByName("Praga"));
+////
+////			LocationService.uploadImage(podCarol,"podCarol.jpg");
+////			placeToVisitRepository.save(podCarol);
+////
+////			LocationService.getImage(podCarol);
+//////			placeToVisitRepository.save(new PlaceToVisit("titlu demo",
+//////					"descriere demo",repo.findByName("Praga")));
+//		};
+//	}
 
 }

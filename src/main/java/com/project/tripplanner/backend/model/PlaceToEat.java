@@ -27,7 +27,7 @@ public class PlaceToEat {
     @Column(name = "rating")
     private Integer rating;
 
-    private String image;
+    private String imageName;
 
 
     public PlaceToEat(String title, String description) {
@@ -40,7 +40,7 @@ public class PlaceToEat {
     }
 
     public String getImage() {
-        return image;
+        return imageName;
     }
 
     public void setTitle(String title) {
@@ -56,7 +56,7 @@ public class PlaceToEat {
     }
 
     public void setImage(String image) {
-        this.image = image;
+        this.imageName = image;
     }
 
     public City getCity() {

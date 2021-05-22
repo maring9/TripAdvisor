@@ -22,7 +22,7 @@ public class PlaceToStay{
     @Column(name = "rating")
     private Integer rating;
 
-    private String image;
+    private String imageName;
 
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
     @JoinColumn(name = "city_id")
@@ -51,11 +51,11 @@ public class PlaceToStay{
     }
 
     public String getImage() {
-        return image;
+        return imageName;
     }
 
     public void setImage(String image) {
-        this.image = image;
+        this.imageName = image;
     }
 
     public City getCity() {

@@ -12,7 +12,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.context.support.ServletContextResource;
 
+import javax.annotation.Resource;
+import javax.servlet.ServletContext;
 import java.awt.print.Book;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -26,6 +29,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api")
 public class PlaceToVisitController {
+
+    @Autowired
+    private ServletContext servletContext;
 
     @Autowired
     private PlaceToVisitRepository placeToVisitRepository;
@@ -50,15 +56,18 @@ public class PlaceToVisitController {
         }
     }
 
-    @GetMapping("/places_to_visit/getImage")
-    public File getImage(@RequestBody String imagePath){
-        try {
-           return new File(imagePath);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
+    @GetMapping("*/places_to_visit/{image_name}/getImage")
+    public File getImage(@PathVariable String image_name){
+        System.out.println(image_name);
+        return new File("/resources/images/" + image_name);
     }
+
+
+//        ServletContextResource resource = new ServletContextResource(servletContext,"resources/images/podCarol.jpg");
+//
+////        return new File
+//        return resource;
+////                (Resource) new ServletContextResource(servletContext,"src/main/resources/static/images/podCarol.jpg");
 
 //    @GetMapping("*/places_to_visit/addToBookmark/{locationName}")
 //    public ResponseEntity<Boolean> addToBookmark(@PathVariable String locationName){
