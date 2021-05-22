@@ -39,8 +39,8 @@ public class TripplannerApplication {
 //			City praga = new City("Praga");
 //			repo.save(praga);
 
-			User user = new User("username",
-					"email@gmail.com","123456");
+			User user = new User("username2",
+					"username2@gmail.com","123456");
 			userRepository.save(user);
 
 //			PlaceToVisit paris = placeToVisitRepository.findByTitle("Paris");

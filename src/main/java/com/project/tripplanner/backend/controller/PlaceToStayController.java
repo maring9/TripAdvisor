@@ -25,6 +25,8 @@ public class PlaceToStayController {
 //        System.out.println("welcome");
 //    }
 
+    //TODO: adaug metoda pentru returnarea unui obiect File
+
     @GetMapping(value = "/city={cityName}/places_to_stay")
     public ResponseEntity<List<PlaceToStay>> getAllPlacesToStay(@PathVariable String cityName){
         try{
