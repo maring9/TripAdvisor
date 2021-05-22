@@ -27,6 +27,7 @@ public class PlaceToEat {
     @Column(name = "rating")
     private Integer rating;
 
+    @Column(name = "image_name")
     private String imageName;
 
 

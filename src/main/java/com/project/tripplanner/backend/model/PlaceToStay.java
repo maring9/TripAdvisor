@@ -22,6 +22,7 @@ public class PlaceToStay{
     @Column(name = "rating")
     private Integer rating;
 
+    @Column(name = "image_name")
     private String imageName;
 
     @ManyToOne(fetch = FetchType.LAZY,optional = false)

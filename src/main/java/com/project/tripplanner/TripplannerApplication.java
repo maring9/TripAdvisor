@@ -39,28 +39,31 @@ public class TripplannerApplication {
 	}
 
 
-//	@Bean
-//	InitializingBean sendDatabase() {
-//		return () -> {
-////			City praga = new City("Praga");
-////			repo.save(praga);
-//
+	@Bean
+	InitializingBean sendDatabase() {
+		return () -> {
+//			City praga = new City("Praga");
+//			repo.save(praga);
+
+			PlaceToVisit stB = new PlaceToVisit("StB","descriere StB",repo.findByName("Madrid"));
+			stB.setImage("podCarol.jpg");
+			placeToVisitRepository.save(stB);
 //			User user = new User("username2",
 //					"username2@gmail.com","123456");
 //			userRepository.save(user);
+
+//			PlaceToVisit paris = placeToVisitRepository.findByTitle("Paris");
+
+//			PlaceToVisit podCarol = new PlaceToVisit("podCarol",
+//					"descriere podCarol",repo.findByName("Praga"));
 //
-////			PlaceToVisit paris = placeToVisitRepository.findByTitle("Paris");
+//			LocationService.uploadImage(podCarol,"podCarol.jpg");
+//			placeToVisitRepository.save(podCarol);
 //
-////			PlaceToVisit podCarol = new PlaceToVisit("podCarol",
-////					"descriere podCarol",repo.findByName("Praga"));
-////
-////			LocationService.uploadImage(podCarol,"podCarol.jpg");
-////			placeToVisitRepository.save(podCarol);
-////
-////			LocationService.getImage(podCarol);
-//////			placeToVisitRepository.save(new PlaceToVisit("titlu demo",
-//////					"descriere demo",repo.findByName("Praga")));
-//		};
-//	}
+//			LocationService.getImage(podCarol);
+////			placeToVisitRepository.save(new PlaceToVisit("titlu demo",
+////					"descriere demo",repo.findByName("Praga")));
+		};
+	}
 
 }

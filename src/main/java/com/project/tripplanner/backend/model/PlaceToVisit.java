@@ -23,6 +23,7 @@ public class PlaceToVisit {
 
 //    @Lob
 //    @Basic(fetch = FetchType.LAZY)
+    @Column(name = "image_name")
     private String imageName;
 
     @ManyToOne(fetch = FetchType.LAZY,optional = false)
