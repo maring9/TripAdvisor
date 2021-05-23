@@ -28,7 +28,7 @@ public class BookmarkController {
     @Autowired
     private BookmarkRepository bookmarkRepository;
 
-    @PostMapping("*/places_to_visit/{userId}/addBookmark")
+    @PostMapping("/places_to_visit/{userId}/addBookmark")
     public ResponseEntity<Boolean> addBookmark(@PathVariable Long userId,
                                                @Valid @RequestBody Bookmark bookmark) {
         Optional<User> user = userRepository.findById(userId);
@@ -39,7 +39,20 @@ public class BookmarkController {
         return new ResponseEntity<>(true, HttpStatus.OK);
     }
 
-    @PostMapping("*/places_to_stay/{userId}/addBookmark")
+    @PostMapping("/places_to_visit/{userId}/removeBookmark")
+    public ResponseEntity<Boolean> removeBookmark(@PathVariable Long userId,
+                                               @Valid @RequestBody Bookmark bookmark) {
+        Optional<User> user = userRepository.findById(userId);
+        if (user.isPresent()) {
+//            bookmark.setUser(user.get());
+            Bookmark bookmark1 = bookmarkRepository.findByLocationName(bookmark.getLocationName());
+            bookmarkRepository.delete(bookmark1);
+            return new ResponseEntity<>(true, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(false,HttpStatus.OK);
+    }
+
+    @PostMapping("/places_to_stay/{userId}/addBookmark")
     public ResponseEntity<Boolean> addBookmarkStay(@PathVariable Long userId,
                                                @Valid @RequestBody Bookmark bookmark) {
         Optional<User> user = userRepository.findById(userId);
@@ -50,7 +63,20 @@ public class BookmarkController {
         return new ResponseEntity<>(true, HttpStatus.OK);
     }
 
-    @PostMapping("*/places_to_eat/{userId}/addBookmark")
+    @PostMapping("/places_to_stay/{userId}/removeBookmark")
+    public ResponseEntity<Boolean> removeBookmarkStay(@PathVariable Long userId,
+                                                  @Valid @RequestBody Bookmark bookmark) {
+        Optional<User> user = userRepository.findById(userId);
+        if (user.isPresent()) {
+//            bookmark.setUser(user.get());
+            Bookmark bookmark1 = bookmarkRepository.findByLocationName(bookmark.getLocationName());
+            bookmarkRepository.delete(bookmark1);
+            return new ResponseEntity<>(true, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(false,HttpStatus.OK);
+    }
+
+    @PostMapping("/places_to_eat/{userId}/addBookmark")
     public ResponseEntity<Boolean> addBookmarkEat(@PathVariable Long userId,
                                                @Valid @RequestBody Bookmark bookmark) {
         Optional<User> user = userRepository.findById(userId);
@@ -59,6 +85,19 @@ public class BookmarkController {
             bookmarkRepository.save(bookmark);
         }
         return new ResponseEntity<>(true, HttpStatus.OK);
+    }
+
+    @PostMapping("/places_to_eat/{userId}/removeBookmark")
+    public ResponseEntity<Boolean> removeBookmarkEat(@PathVariable Long userId,
+                                                  @Valid @RequestBody Bookmark bookmark) {
+        Optional<User> user = userRepository.findById(userId);
+        if (user.isPresent()) {
+//            bookmark.setUser(user.get());
+            Bookmark bookmark1 = bookmarkRepository.findByLocationName(bookmark.getLocationName());
+            bookmarkRepository.delete(bookmark1);
+            return new ResponseEntity<>(true, HttpStatus.OK);
+        }
+        return new ResponseEntity<>(false,HttpStatus.OK);
     }
 
 
