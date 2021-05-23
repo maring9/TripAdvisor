@@ -45,7 +45,7 @@ public class BookmarkController {
         Optional<User> user = userRepository.findById(userId);
         if (user.isPresent()) {
 //            bookmark.setUser(user.get());
-            Bookmark bookmark1 = bookmarkRepository.findByLocationName(bookmark.getLocationName());
+            Bookmark bookmark1 = bookmarkRepository.findBookmark(bookmark.getLocationName(),user.get().getId());
             bookmarkRepository.delete(bookmark1);
             return new ResponseEntity<>(true, HttpStatus.OK);
         }
@@ -69,7 +69,7 @@ public class BookmarkController {
         Optional<User> user = userRepository.findById(userId);
         if (user.isPresent()) {
 //            bookmark.setUser(user.get());
-            Bookmark bookmark1 = bookmarkRepository.findByLocationName(bookmark.getLocationName());
+            Bookmark bookmark1 = bookmarkRepository.findBookmark(bookmark.getLocationName(),user.get().getId());
             bookmarkRepository.delete(bookmark1);
             return new ResponseEntity<>(true, HttpStatus.OK);
         }
@@ -93,7 +93,7 @@ public class BookmarkController {
         Optional<User> user = userRepository.findById(userId);
         if (user.isPresent()) {
 //            bookmark.setUser(user.get());
-            Bookmark bookmark1 = bookmarkRepository.findByLocationName(bookmark.getLocationName());
+            Bookmark bookmark1 = bookmarkRepository.findBookmark(bookmark.getLocationName(),user.get().getId());
             bookmarkRepository.delete(bookmark1);
             return new ResponseEntity<>(true, HttpStatus.OK);
         }
