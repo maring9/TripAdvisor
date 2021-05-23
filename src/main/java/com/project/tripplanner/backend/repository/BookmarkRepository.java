@@ -15,7 +15,7 @@ public interface BookmarkRepository extends JpaRepository<Bookmark,Long> {
     nativeQuery = true)
     List<Bookmark> getAllBookmarks(@Param("user_id") long userId);
 
-    @Query(value = "SELECT * from bookmarks b where b.location_name =: locationName and b.user_id =: userId",
+    @Query(value = "SELECT * from bookmarks b where b.location_name =:locationName and b.user_id =:userId",
     nativeQuery = true)
     Bookmark findBookmark(@Param("locationName") String title,@Param("userId")long userId);
 }
