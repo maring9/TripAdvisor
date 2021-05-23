@@ -1,0 +1,18 @@
+<div class="mt-4 container justify-content-center">
+  <mat-card class="container justify-content-center">
+    <app-login-container></app-login-container>
+    <div class="or pb-3">
+      <span>OR</span>
+    </div>
+    <div class="mb-3">
+      <app-facebook-button class="w-100" (click)="auth.signInWithFB()"></app-facebook-button>
+    </div>
+    <div class="mb-3">
+      <app-google-login-button (click)="auth.signInWithGoogle()"></app-google-login-button>
+    </div>
+    <div class="mb-3">
+      <span>Don't have an account?</span><a routerLink="/auth/register">Sign up</a>
+    </div>
+  </mat-card>
+</div>
+

@@ -1,0 +1,14 @@
+<div class="my-container">
+  <div class="flex-h-center">
+    <div>
+      <a routerLink="/" style="text-decoration: none">
+        <span style="font-weight: bold; color: #FFF">trip</span>
+        <span class="grey"><i>Planner</i></span>
+      </a>
+      <span class="vertical-line" *ngIf="placesService.state.city"></span>
+      <span class="green">{{placesService.state.city}}</span>
+    </div>
+  </div>
+
+    <app-user-settings [picture]="(auth.getUserData() | async)?.response.picture.data" *ngIf="auth.userData"></app-user-settings>
+</div>

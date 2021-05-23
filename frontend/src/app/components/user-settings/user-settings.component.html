@@ -1,0 +1,21 @@
+<div class="position-relative">
+  <div class="profile-picture"
+       [style.width.px]="picture?.width || 'auto'"
+       [style.height.px]="picture?.height || 'auto'"
+       [class.letters]="!picture?.url"
+       (click)="toggleMenu()"
+  >
+    <img [src]="picture?.url" alt="profile picture" *ngIf="picture?.url; else initialsPicture">
+    <ng-template #initialsPicture>{{initials}}</ng-template>
+  </div>
+
+  <div class="menu position-absolute" *ngIf="showMenu">
+    <ul>
+      <li>
+        <button (click)="auth.logout()">
+          Logout
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>

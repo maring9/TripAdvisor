@@ -1,0 +1,16 @@
+<div>
+  <h3 class="title">Login</h3>
+  <p>Login to proceed to the home page</p>
+  <form #loginForm="ngForm" (ngSubmit)="loginForm.form.valid && submit(loginForm.form.value)">
+
+    <div class="mb-3 valid" [ngClass]="{error: loginForm.submitted && loginForm.controls.username?.invalid}">
+      <input placeholder="Username" name="username" ngModel autocomplete="username" required>
+      <span>email invalid</span>
+    </div>
+    <div class="mb-3 valid" [ngClass]="{error: loginForm.submitted && loginForm.controls.password?.invalid}">
+      <input placeholder="Password" type="password" name="password" ngModel autocomplete="password" required>
+      <span>invalid password</span>
+    </div>
+    <button class="login-button mb-3" type="submit">Login with Email</button>
+  </form>
+</div>

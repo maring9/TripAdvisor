@@ -1,0 +1,13 @@
+@import "./src/css/vars";
+
+.user-container {
+  border: 1px solid #C4C4C4;
+  border-right: 1px solid #a7a7a7;
+  min-width: 200px;
+
+  h4 {
+    text-align: center;
+    border-bottom: 1px solid $grey;
+  }
+  box-shadow: 10px 4px 5px -2px #ccc;
+}
