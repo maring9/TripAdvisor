@@ -1,117 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07b5b558-4173-42fc-a418-d83cf42c1924" name="Default Changelist" comment="" />
+    <list default="true" id="4fa6175d-7de0-40c5-901b-f6023a86c3ea" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/Arc de Triomphe.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/Eiffel Tower.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/Hotel Lutetia.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/Hotel Raphael.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/Hotel Ritz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/The Louvre.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/arpege.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/epicure.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/src/main/resources/static/lecinq.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/project/tripplanner/backend/controller/PlaceToEatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/project/tripplanner/backend/controller/PlaceToEatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="ProjectId" id="1selWzLk1tQcRNy1ADUK7Qap0mU" />
+  <component name="ProjectId" id="1sx3907sE5g0Y8zzw3TgOdFlxvK" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/backend" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="E:\apps\work\marin\ui\TripPlanner\node_modules\typescript\lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RunManager" selected="Karma.RegisterContainerComponent.title should be displayed">
-    <configuration name="LoginContainerComponent" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
-      <config-file value="$PROJECT_DIR$/karma.conf.js" />
-      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
-      <working-directory value="$PROJECT_DIR$" />
-      <node-interpreter value="project" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file-path value="$PROJECT_DIR$/src/app/components/login-container/login-container.component.spec.ts" />
-      <test-names>
-        <test-name value="LoginContainerComponent" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="RegisterContainerComponent" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
-      <config-file value="$PROJECT_DIR$/karma.conf.js" />
-      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
-      <working-directory value="$PROJECT_DIR$" />
-      <node-interpreter value="project" />
-      <envs />
-      <scope-kind value="SUITE" />
-      <test-file-path value="$PROJECT_DIR$/src/app/components/register-container/register-container.component.spec.ts" />
-      <test-names>
-        <test-name value="RegisterContainerComponent" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="RegisterContainerComponent.should create" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
-      <config-file value="$PROJECT_DIR$/karma.conf.js" />
-      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
-      <working-directory value="$PROJECT_DIR$" />
-      <node-interpreter value="project" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file-path value="$PROJECT_DIR$/src/app/components/register-container/register-container.component.spec.ts" />
-      <test-names>
-        <test-name value="RegisterContainerComponent" />
-        <test-name value="should create" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="RegisterContainerComponent.should update the username field" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
-      <config-file value="$PROJECT_DIR$/karma.conf.js" />
-      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
-      <working-directory value="$PROJECT_DIR$" />
-      <node-interpreter value="project" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file-path value="$PROJECT_DIR$/src/app/components/register-container/register-container.component.spec.ts" />
-      <test-names>
-        <test-name value="RegisterContainerComponent" />
-        <test-name value="should update the username field" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="RegisterContainerComponent.title should be displayed" type="JavaScriptTestRunnerKarma" temporary="true" nameIsGenerated="true">
-      <config-file value="$PROJECT_DIR$/karma.conf.js" />
-      <karma-package-dir value="$PROJECT_DIR$/node_modules/@angular/cli" />
-      <working-directory value="$PROJECT_DIR$" />
-      <node-interpreter value="project" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file-path value="$PROJECT_DIR$/src/app/components/register-container/register-container.component.spec.ts" />
-      <test-names>
-        <test-name value="RegisterContainerComponent" />
-        <test-name value="title should be displayed" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="Tests (tripPlanner)" type="JavaScriptTestRunnerKarma">
-      <config-file value="$PROJECT_DIR$/karma.conf.js" />
-      <working-directory value="$PROJECT_DIR$" />
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="E2E Tests (tripPlanner)" type="JavaScriptTestRunnerProtractor">
-      <config-file value="$PROJECT_DIR$/e2e/protractor.conf.js" />
+      <config-file value="$PROJECT_DIR$/frontend/e2e/protractor.conf.js" />
       <node-interpreter value="project" />
       <protractor-options value="" />
       <envs />
@@ -122,7 +68,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Angular CLI Server" type="js.build_tools.npm">
-      <package-json value="$PROJECT_DIR$/package.json" />
+      <package-json value="$PROJECT_DIR$/frontend/package.json" />
       <command value="run" />
       <scripts>
         <script value="start" />
@@ -131,42 +77,20 @@
       <envs />
       <method v="2" />
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Karma.RegisterContainerComponent.title should be displayed" />
-        <item itemvalue="Karma.RegisterContainerComponent.should update the username field" />
-        <item itemvalue="Karma.RegisterContainerComponent.should create" />
-        <item itemvalue="Karma.RegisterContainerComponent" />
-        <item itemvalue="Karma.LoginContainerComponent" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="07b5b558-4173-42fc-a418-d83cf42c1924" name="Default Changelist" comment="" />
-      <created>1621240972030</created>
+      <changelist id="4fa6175d-7de0-40c5-901b-f6023a86c3ea" name="Default Changelist" comment="" />
+      <created>1621800257221</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1621240972030</updated>
-      <workItem from="1621240974225" duration="14670000" />
-      <workItem from="1621363772801" duration="21402000" />
+      <updated>1621800257221</updated>
+      <workItem from="1621800258411" duration="1293000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

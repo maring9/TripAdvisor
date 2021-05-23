@@ -27,7 +27,6 @@ public class PlaceToEatController {
             System.out.println(cityName);
 
             places.addAll(placeToEatRepository.findByCityName(cityName));
-            System.out.println(places.get(0).getTitle());
 
             if(places.isEmpty()){
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
