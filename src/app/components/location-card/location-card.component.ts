@@ -28,8 +28,7 @@ export class LocationCardComponent implements OnInit {
       return 'bookmark_border';
     }
 
-    // @ts-ignore
-    return this.placeService.isMarked(this.place.id) ? 'bookmark' : 'bookmark_border';
+    return this.placeService.isMarked(this.place?.title as string) ? 'bookmark' : 'bookmark_border';
   }
 
 }

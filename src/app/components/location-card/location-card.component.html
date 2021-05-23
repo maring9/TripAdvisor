@@ -3,7 +3,8 @@
     <div class="row">
       <div class="col-md-3">
         <div class="container">
-          <img [src]="staticFiles.getStaticFileUrl(place.image) | withAuth | async"  style="height: 100%; width: 100%; object-fit: cover">
+          <img [src]="staticFiles.getStaticFileUrl(place.image) | withAuth | async"
+               style="height: 100%; width: 100%; object-fit: cover">
         </div>
       </div>
 
@@ -11,7 +12,7 @@
         <div class="container">
           <div class="d-flex justify-content-between">
             <span class="title">{{place.title}}</span>
-            <button class="button-without-style" (click)="placeService.toggleMark(place.id)">
+            <button class="button-without-style" (click)="placeService.toggleMark(place.title)">
               <mat-icon aria-hidden="false" aria-label="bookmark">{{getBookmarkImage()}}</mat-icon>
             </button>
           </div>
@@ -23,7 +24,8 @@
               <div *ngIf="showPrice"><span style="font-size: 25px" class="grey">{{place.price}}$</span></div>
             </div>
           </div>
-          <ngx-material-rating [value]="place.rating" [max]="5" [readonly]="true" [dense]="true" (change)="change($event)" color="accent"></ngx-material-rating>
+          <ngx-material-rating [value]="place.rating" [max]="5" [readonly]="true" [dense]="true"
+                               (change)="change($event)" color="accent"></ngx-material-rating>
         </div>
       </div>
     </div>

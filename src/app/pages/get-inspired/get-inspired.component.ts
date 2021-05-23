@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {PlacesService} from '../../services/places.service';
 
 @Component({
   templateUrl: './get-inspired.component.html',
@@ -6,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GetInspiredComponent implements OnInit {
 
-  constructor() { }
+  public places: any[] = [];
+
+  constructor(private placeService: PlacesService) {
+  }
 
   ngOnInit(): void {
+    this.placeService.getGetInspired()
+      .subscribe(places => {
+          this.places = places;
+          console.log(this.places);
+        }
+      );
   }
 
 }

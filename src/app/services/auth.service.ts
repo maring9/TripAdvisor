@@ -75,6 +75,7 @@ export class AuthService {
       const socialUser = new SocialUser();
       socialUser.authToken = r.accessToken;
       socialUser.name = r.username;
+      socialUser.id = r.userId;
       this.userDataSubject.next(socialUser);
     }));
   }
