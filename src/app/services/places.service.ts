@@ -16,6 +16,11 @@ function groupByKey(array: any[], key: any): any[] {
     }, {});
 }
 
+export type ApiLink =
+  | 'places_to_stay'
+  | 'places_to_eat'
+  | 'places_to_visit';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -24,7 +29,13 @@ export class PlacesService {
     city: ''
   };
 
-  private myBookmarks: string[] = [];
+  private myBookmarks: {
+    [key in ApiLink]: string[]
+  } = {
+    places_to_eat: [],
+    places_to_visit: [],
+    places_to_stay: [],
+  };
 
   constructor(private http: HttpClient,
               private auth: AuthService) {
@@ -61,36 +72,45 @@ export class PlacesService {
       }));
   }
 
-  updateMyBookmarks(): void {
+  updateMyBookmarks(link: ApiLink): void {
     console.log(this.auth.userData);
     const url = `${environment.apiUrl}${this.auth.userData?.id}/getUserBookmarks`;
     this.http.get<{ locationName: string }[]>(url)
       .pipe(map(bookmark => bookmark.map(t => t.locationName)))
       .subscribe(bookmarks => {
-        this.myBookmarks = bookmarks;
+        this.myBookmarks[link] = bookmarks;
       });
   }
 
-  mark(locationName: string): void {
+  mark(locationName: string, link: ApiLink): void {
     console.log(`mark: ${locationName}`);
-    const url = `${environment.apiUrl}places_to_visit/${this.auth.userData?.id}/addBookmark`;
+    const url = `${environment.apiUrl}${link}/${this.auth.userData?.id}/addBookmark`;
     this.http.post(url, {
       locationName
     }).subscribe(t => {
-      this.myBookmarks.push(locationName);
+      // tslint:disable-next-line:no-non-null-assertion
+      this.myBookmarks[link]!.push(locationName);
     });
   }
 
-  unmark(id: string): void {
-    // this.myBookmarks = this.myBookmarks.filter(markId => markId !== id);
+  unmark(locationName: string, link: ApiLink): void {
+    console.log(`mark: ${locationName}`);
+    const url = `${environment.apiUrl}${link}/${this.auth.userData?.id}/removeBookmark`;
+    this.http.post(url, {
+      locationName
+    }).subscribe(t => {
+      // tslint:disable-next-line:no-non-null-assertion
+      this.myBookmarks[link]! = this.myBookmarks[link]!.filter(markId => markId !== locationName);
+    });
   }
 
-  toggleMark(id: string): void {
-    this.isMarked(id) ? this.unmark(id) : this.mark(id);
-    this.updateMyBookmarks();
+  toggleMark(id: string, link: ApiLink): void {
+    this.isMarked(id, link) ? this.unmark(id, link) : this.mark(id, link);
+    this.updateMyBookmarks(link);
   }
 
-  isMarked(id: string): boolean {
-    return this.myBookmarks.some(markId => id === markId);
+  isMarked(id: string, link: ApiLink): boolean {
+    // tslint:disable-next-line:no-non-null-assertion
+    return this.myBookmarks[link]!.some(markId => id === markId);
   }
 }

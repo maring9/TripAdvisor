@@ -17,7 +17,7 @@ export class PlacesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.placesService.updateMyBookmarks();
+    this.placesService.updateMyBookmarks('places_to_visit');
     this.placesService.getAll().subscribe(result => {
       this.places = result;
       console.log(this.places, this.myBookmarks);

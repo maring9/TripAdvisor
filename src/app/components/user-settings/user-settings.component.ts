@@ -19,15 +19,24 @@ export class UserSettingsComponent implements OnInit {
 
   public initials: string | undefined;
 
-  constructor(private auth: AuthService) {
+  public showMenu = false;
+
+  constructor(public auth: AuthService) {
   }
 
   ngOnInit(): void {
-    this.auth.getUserData().subscribe(user => {
-      if (user) {
-        this.initials = user.firstName.charAt(0) + user.lastName.charAt(0);
-        this.initials.toUpperCase();
+    const user = this.auth.userData;
+    if (user) {
+      this.initials = user.firstName?.charAt(0) + user.lastName?.charAt(0);
+      if (!this.initials) {
+        this.initials = (user as any).name?.charAt(0);
       }
-    });
+      // @ts-ignore
+      this.initials = this.initials?.toUpperCase();
+    }
+  }
+
+  toggleMenu(): void {
+    this.showMenu = !this.showMenu;
   }
 }

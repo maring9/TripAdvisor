@@ -5,10 +5,10 @@
         <span style="font-weight: bold; color: #FFF">trip</span>
         <span class="grey"><i>Planner</i></span>
       </a>
-      <span class="vertical-line"></span>
-      <span class="green">{{placesService.state.city || "City's name"}}</span>
+      <span class="vertical-line" *ngIf="placesService.state.city"></span>
+      <span class="green">{{placesService.state.city}}</span>
     </div>
   </div>
 
-    <app-user-settings [picture]="(auth.getUserData() | async)?.response.picture.data" *ngIf="auth.getUserData() | async"></app-user-settings>
+    <app-user-settings [picture]="(auth.getUserData() | async)?.response.picture.data" *ngIf="auth.userData"></app-user-settings>
 </div>

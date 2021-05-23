@@ -31,8 +31,10 @@ import {RegisterComponent} from './pages/register/register.component';
 import {RegisterContainerComponent} from './components/register-container/register-container.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {AuthInterceptor} from './interceptors/auth.interceptor';
-import { WithAuthPipe } from './pipes/with-auth.pipe';
-import { WhereToEatCardsComponent } from './components/where-to-eat-cards/where-to-eat-cards.component';
+import {WithAuthPipe} from './pipes/with-auth.pipe';
+import {WhereToEatCardsComponent} from './components/where-to-eat-cards/where-to-eat-cards.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 export const socialLoginProvider: Provider = {
@@ -90,13 +92,15 @@ export const socialLoginProvider: Provider = {
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    MatFormFieldModule,
   ],
   providers: [
     {
-      provide : HTTP_INTERCEPTORS,
+      provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
-      multi   : true,
+      multi: true,
     },
     socialLoginProvider
   ],

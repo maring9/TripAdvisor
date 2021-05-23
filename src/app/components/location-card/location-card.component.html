@@ -12,7 +12,7 @@
         <div class="container">
           <div class="d-flex justify-content-between">
             <span class="title">{{place.title}}</span>
-            <button class="button-without-style" (click)="placeService.toggleMark(place.title)">
+            <button class="button-without-style" (click)="placeService.toggleMark(place.title, link!)">
               <mat-icon aria-hidden="false" aria-label="bookmark">{{getBookmarkImage()}}</mat-icon>
             </button>
           </div>
@@ -21,7 +21,7 @@
               <p class="description">{{place.description}}</p>
             </div>
             <div>
-              <div *ngIf="showPrice"><span style="font-size: 25px" class="grey">{{place.price}}$</span></div>
+              <div *ngIf="showPrice"><span style="font-size: 25px" class="grey" *ngIf="place.price">{{place.price}}$</span></div>
             </div>
           </div>
           <ngx-material-rating [value]="place.rating" [max]="5" [readonly]="true" [dense]="true"

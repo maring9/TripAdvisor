@@ -15,6 +15,8 @@ export class WhereToStayComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.placesService.updateMyBookmarks('places_to_stay');
+
     this.placesService.whereToStay().subscribe(places => {
       this.places = places;
     });

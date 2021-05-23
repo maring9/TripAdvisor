@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ILocation} from '../../models/location';
-import {PlacesService} from '../../services/places.service';
+import {ApiLink, PlacesService} from '../../services/places.service';
 import {StaticFilesService} from '../../services/static-files.service';
 
 
@@ -12,6 +12,7 @@ import {StaticFilesService} from '../../services/static-files.service';
 export class LocationCardComponent implements OnInit {
   @Input() place: ILocation | null = null;
   @Input() showPrice = false;
+  @Input() link: ApiLink | null = null;
 
   constructor(public placeService: PlacesService, public staticFiles: StaticFilesService) {
   }
@@ -28,7 +29,8 @@ export class LocationCardComponent implements OnInit {
       return 'bookmark_border';
     }
 
-    return this.placeService.isMarked(this.place?.title as string) ? 'bookmark' : 'bookmark_border';
+    // tslint:disable-next-line:no-non-null-assertion
+    return this.placeService.isMarked(this.place?.title as string, this.link!) ? 'bookmark' : 'bookmark_border';
   }
 
 }
