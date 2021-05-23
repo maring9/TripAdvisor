@@ -39,6 +39,30 @@ public class BookmarkController {
         return new ResponseEntity<>(true, HttpStatus.OK);
     }
 
+    @PostMapping("*/places_to_stay/{userId}/addBookmark")
+    public ResponseEntity<Boolean> addBookmarkStay(@PathVariable Long userId,
+                                               @Valid @RequestBody Bookmark bookmark) {
+        Optional<User> user = userRepository.findById(userId);
+        if (user.isPresent()) {
+            bookmark.setUser(user.get());
+            bookmarkRepository.save(bookmark);
+        }
+        return new ResponseEntity<>(true, HttpStatus.OK);
+    }
+
+    @PostMapping("*/places_to_eat/{userId}/addBookmark")
+    public ResponseEntity<Boolean> addBookmarkEat(@PathVariable Long userId,
+                                               @Valid @RequestBody Bookmark bookmark) {
+        Optional<User> user = userRepository.findById(userId);
+        if (user.isPresent()) {
+            bookmark.setUser(user.get());
+            bookmarkRepository.save(bookmark);
+        }
+        return new ResponseEntity<>(true, HttpStatus.OK);
+    }
+
+
+
     @Transactional
     @GetMapping("/{userId}/getInspired")
     public List<Bookmark> getOtherUsersBookmarks(@PathVariable long userId){
@@ -46,7 +70,7 @@ public class BookmarkController {
     }
 
     @Transactional
-    @GetMapping("/userId/getUserBookmarks")
+    @GetMapping("/{userId}/getUserBookmarks")
     public List<Bookmark> getUserBookmarks(@PathVariable long userId){
         return bookmarkRepository.findByUserId(userId);
     }
