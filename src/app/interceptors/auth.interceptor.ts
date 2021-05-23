@@ -16,27 +16,14 @@ export class AuthInterceptor implements HttpInterceptor {
   }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    return this.auth.isAuth$.pipe(
-      // @ts-ignore
-      concatMap(isAuth => {
-        if (isAuth) {
-          return this.auth.getUserData();
-        } else {
-          throwError('Not authenticated');
+    const user = this.auth.userData;
+    if (user) {
+      request = request.clone({
+        setHeaders: {
+          Authorization: `Bearer ${user.authToken}`
         }
-      }),
-      concatMap(user => {
-        request = request.clone({
-          setHeaders: {
-            Authorization: `Bearer ${user.authToken}`
-          }
-        });
-        return next.handle(request);
-      }),
-      catchError(err => {
-        console.log(err);
-        return next.handle(request);
-      })
-    );
+      });
+    }
+    return next.handle(request);
   }
 }

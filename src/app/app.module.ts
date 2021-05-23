@@ -26,10 +26,13 @@ import {MatIconModule} from '@angular/material/icon';
 import {FacebookButtonComponent} from './components/facebook-button/facebook-button.component';
 import {GoogleLoginButtonComponent} from './components/google-login-button/google-login-button.component';
 import {environment} from 'src/environments/environment';
-import { LoginContainerComponent } from './components/login-container/login-container.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { RegisterContainerComponent } from './components/register-container/register-container.component';
-import {HttpClientModule} from '@angular/common/http';
+import {LoginContainerComponent} from './components/login-container/login-container.component';
+import {RegisterComponent} from './pages/register/register.component';
+import {RegisterContainerComponent} from './components/register-container/register-container.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AuthInterceptor} from './interceptors/auth.interceptor';
+import { WithAuthPipe } from './pipes/with-auth.pipe';
+import { WhereToEatCardsComponent } from './components/where-to-eat-cards/where-to-eat-cards.component';
 
 
 export const socialLoginProvider: Provider = {
@@ -72,6 +75,8 @@ export const socialLoginProvider: Provider = {
     LoginContainerComponent,
     RegisterComponent,
     RegisterContainerComponent,
+    WithAuthPipe,
+    WhereToEatCardsComponent,
   ],
   imports: [
     BrowserModule,
@@ -88,6 +93,11 @@ export const socialLoginProvider: Provider = {
     HttpClientModule
   ],
   providers: [
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi   : true,
+    },
     socialLoginProvider
   ],
   bootstrap: [AppComponent]

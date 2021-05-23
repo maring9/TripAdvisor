@@ -1,4 +1,5 @@
-<!--<div style="text-align: center">-->
-<!--  <app-navigation></app-navigation>-->
-<!--  <a routerLink="/auth/login" style="">login</a>-->
-<!--</div>-->
+
+<form (submit)="onSubmit()" #f="ngForm">
+  <input [(ngModel)]="city" name="city">
+  <button>submit</button>
+</form>

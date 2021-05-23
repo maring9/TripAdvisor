@@ -1,28 +1,37 @@
 import {Injectable} from '@angular/core';
 import {ILocation} from '../models/location';
 import {Observable, of} from 'rxjs';
+import {environment} from '../../environments/environment';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlacesService {
-
   myBookmarks: number[] = [
     3
   ];
 
-  constructor() {
+  public state = {
+    city: ''
+  };
+
+  constructor(private http: HttpClient) {
   }
 
   getAll(): Observable<ILocation[]> {
-    return of([...Array(20)].map((_, i) => ({
-      id: i,
-      description: 'plm pm plm lsakdfjlkasd jfa',
-      photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png',
-      price: 200,
-      title: 'Mda ce sa zic',
-      rating: 4
-    })));
+    const url = `${environment.apiUrl}city=${this.state.city}/places_to_visit`;
+    return this.http.get<ILocation[]>(url);
+  }
+
+  whereToStay(): Observable<ILocation[]> {
+    const url = `${environment.apiUrl}city=${this.state.city}/places_to_stay`;
+    return this.http.get<ILocation[]>(url);
+  }
+
+  whereToEat(): Observable<ILocation[]> {
+    const url = `${environment.apiUrl}city=${this.state.city}/places_to_eat`;
+    return this.http.get<ILocation[]>(url);
   }
 
   getMyBookmarks(): number[] {

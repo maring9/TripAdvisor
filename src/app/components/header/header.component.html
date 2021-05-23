@@ -3,10 +3,10 @@
     <div>
       <a routerLink="/" style="text-decoration: none">
         <span style="font-weight: bold; color: #FFF">trip</span>
-        <span class="grey"><i>advisor</i></span>
+        <span class="grey"><i>Planner</i></span>
       </a>
       <span class="vertical-line"></span>
-      <span class="green">City's name</span>
+      <span class="green">{{placesService.state.city || "City's name"}}</span>
     </div>
   </div>
 

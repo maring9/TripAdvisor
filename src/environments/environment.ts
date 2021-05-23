@@ -4,8 +4,9 @@
 
 export const environment = {
   production: false,
-  facebookClientId: 'clientId',
+  facebookClientId: '477808213423796',
   googleClientId: 'clientId',
+  apiUrl: 'http://localhost:8090/api/',
 };
 
 /*

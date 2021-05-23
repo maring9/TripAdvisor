@@ -1,5 +1,5 @@
 export interface ILocation {
-  photoUrl: string;
+  image: string;
   title: string;
   description: string;
   price: number;

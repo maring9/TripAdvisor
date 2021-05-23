@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ILocation} from '../../models/location';
 import {PlacesService} from '../../services/places.service';
+import {StaticFilesService} from '../../services/static-files.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class LocationCardComponent implements OnInit {
   @Input() place: ILocation | null = null;
   @Input() showPrice = false;
 
-  constructor(public placeService: PlacesService) {
+  constructor(public placeService: PlacesService, public staticFiles: StaticFilesService) {
   }
 
   ngOnInit(): void {

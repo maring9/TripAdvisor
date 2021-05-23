@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-md-3">
         <div class="container">
-          <img [src]="place.photoUrl" style="height: 100%; width: 100%; object-fit: cover">
+          <img [src]="staticFiles.getStaticFileUrl(place.image) | withAuth | async"  style="height: 100%; width: 100%; object-fit: cover">
         </div>
       </div>
 
@@ -23,7 +23,7 @@
               <div *ngIf="showPrice"><span style="font-size: 25px" class="grey">{{place.price}}$</span></div>
             </div>
           </div>
-          <ngx-material-rating [max]="5" [dense]="true" (change)="change($event)" color="accent"></ngx-material-rating>
+          <ngx-material-rating [value]="place.rating" [max]="5" [readonly]="true" [dense]="true" (change)="change($event)" color="accent"></ngx-material-rating>
         </div>
       </div>
     </div>

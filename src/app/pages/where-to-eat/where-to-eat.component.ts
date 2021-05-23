@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ILocation} from '../../models/location';
+import {PlacesService} from '../../services/places.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   templateUrl: './where-to-eat.component.html',
@@ -6,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WhereToEatComponent implements OnInit {
 
-  constructor() { }
+  public places: ILocation[] = [];
+
+  constructor(public placesService: PlacesService, private router: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
+    this.placesService.whereToEat().subscribe(places => {
+      this.places = places;
+    });
   }
 
 }

@@ -19,8 +19,8 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        // component: SearchComponent
-        redirectTo: '/places'
+        component: SearchComponent
+        // redirectTo: '/places'
       },
       {
         path: 'places',

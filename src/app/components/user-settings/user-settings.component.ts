@@ -24,8 +24,10 @@ export class UserSettingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.getUserData().subscribe(user => {
-      this.initials = user.firstName.charAt(0) + user.lastName.charAt(0);
-      this.initials.toUpperCase();
+      if (user) {
+        this.initials = user.firstName.charAt(0) + user.lastName.charAt(0);
+        this.initials.toUpperCase();
+      }
     });
   }
 }

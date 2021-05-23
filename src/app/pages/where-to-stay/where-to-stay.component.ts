@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PlacesService} from '../../services/places.service';
 import {ILocation} from '../../models/location';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   templateUrl: './where-to-stay.component.html',
@@ -10,12 +11,12 @@ export class WhereToStayComponent implements OnInit {
 
   public places: ILocation[] = [];
 
-  constructor(public placesService: PlacesService) {
+  constructor(public placesService: PlacesService, private router: ActivatedRoute) {
   }
 
   ngOnInit(): void {
-    this.placesService.getAll().subscribe(t => {
-      this.places = t;
+    this.placesService.whereToStay().subscribe(places => {
+      this.places = places;
     });
   }
 

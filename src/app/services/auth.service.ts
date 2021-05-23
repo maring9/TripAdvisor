@@ -15,8 +15,10 @@ export class AuthService {
   private isAuthSubject = new BehaviorSubject(false);
   public isAuth$ = this.isAuthSubject.asObservable();
 
-  private userDataSubject = new Subject<SocialUser>();
+  private userDataSubject = new Subject<SocialUser | null>();
   private userData$ = this.userDataSubject.asObservable();
+
+  public userData: SocialUser | null = null;
 
   constructor(private authService: SocialAuthService,
               private http: HttpClient,
@@ -35,6 +37,7 @@ export class AuthService {
         await router.navigate(['/auth/login']);
       }
     });
+    this.userDataSubject.next(this.getUser());
   }
 
   public async signInWithGoogle(): Promise<void> {
@@ -53,8 +56,11 @@ export class AuthService {
     await this.authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
   }
 
-  public getUserData(): Observable<SocialUser> {
-    return merge(this.authService.authState, this.userData$);
+  public getUserData(): Observable<SocialUser | null> {
+    return merge(this.authService.authState, this.userData$).pipe(tap(user => {
+      this.userData = user;
+      this.storeUser(user);
+    }));
   }
 
   public register(user: RegisterUser): Observable<any> {
@@ -71,5 +77,30 @@ export class AuthService {
       socialUser.name = r.username;
       this.userDataSubject.next(socialUser);
     }));
+  }
+
+  private storeUser(user: SocialUser | null): void {
+    // return;
+    if (user) {
+      localStorage.setItem('user', JSON.stringify(user));
+      console.log('store');
+    } else {
+      localStorage.removeItem('user');
+    }
+  }
+
+  private getUser(): SocialUser | null {
+    const user = localStorage.getItem('user');
+    if (user) {
+      try {
+        console.log('read');
+
+        return JSON.parse(user);
+      } catch (e) {
+        return null;
+      }
+    } else {
+      return null;
+    }
   }
 }
