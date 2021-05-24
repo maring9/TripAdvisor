@@ -1,5 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnInit} from '@angular/core';
 import {AuthService} from '../../services/auth.service';
+import {fromEvent} from 'rxjs';
+import {filter} from 'rxjs/operators';
 
 interface IPicture {
   is_silhouette: boolean;
@@ -21,7 +23,7 @@ export class UserSettingsComponent implements OnInit {
 
   public showMenu = false;
 
-  constructor(public auth: AuthService) {
+  constructor(public auth: AuthService, private eleRef: ElementRef) {
   }
 
   ngOnInit(): void {
@@ -34,9 +36,17 @@ export class UserSettingsComponent implements OnInit {
       // @ts-ignore
       this.initials = this.initials?.toUpperCase();
     }
+    fromEvent(document, 'click')
+      .pipe(
+        filter(({target}) => this.showMenu && !this.eleRef.nativeElement.contains(target))
+      )
+      .subscribe(event => {
+        this.showMenu = false;
+      });
   }
 
   toggleMenu(): void {
     this.showMenu = !this.showMenu;
   }
+
 }
