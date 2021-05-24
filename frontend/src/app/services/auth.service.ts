@@ -82,6 +82,7 @@ export class AuthService {
 
   public logout(): void {
     this.userDataSubject.next(null);
+
   }
 
   private storeUser(user: SocialUser | null): void {

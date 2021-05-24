@@ -12,6 +12,14 @@
   <div class="menu position-absolute" *ngIf="showMenu">
     <ul>
       <li>
+        <a routerLink="/my-bookmarks">
+          <mat-icon>
+            list
+          </mat-icon>
+          <span>My bookmarks</span>
+        </a>
+      </li>
+      <li>
         <button (click)="auth.logout()">
           <mat-icon>
             power_settings_new

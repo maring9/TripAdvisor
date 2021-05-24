@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {PlacesService} from '../../services/places.service';
 
 interface Item {
   name: string;
@@ -32,7 +33,7 @@ export class NavigationComponent implements OnInit {
     },
   ];
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public placesService: PlacesService) {
   }
 
   ngOnInit(): void {

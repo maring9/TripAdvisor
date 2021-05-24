@@ -35,6 +35,8 @@ import {WithAuthPipe} from './pipes/with-auth.pipe';
 import {WhereToEatCardsComponent} from './components/where-to-eat-cards/where-to-eat-cards.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { MyBookmarksComponent } from './pages/my-bookmarks/my-bookmarks.component';
+import { BookmarksListComponent } from './components/bookmarks-list/bookmarks-list.component';
 
 
 export const socialLoginProvider: Provider = {
@@ -79,6 +81,8 @@ export const socialLoginProvider: Provider = {
     RegisterContainerComponent,
     WithAuthPipe,
     WhereToEatCardsComponent,
+    MyBookmarksComponent,
+    BookmarksListComponent,
   ],
   imports: [
     BrowserModule,

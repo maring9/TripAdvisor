@@ -25,9 +25,10 @@ export type ApiLink =
   providedIn: 'root'
 })
 export class PlacesService {
-  public state = {
+  private _initialState = {
     city: ''
   };
+  public state = {...this._initialState};
 
   private myBookmarks: {
     [key in ApiLink]: string[]
@@ -39,6 +40,16 @@ export class PlacesService {
 
   constructor(private http: HttpClient,
               private auth: AuthService) {
+
+    auth.getUserData().subscribe(data => {
+      if (!data) {
+        this.state = {...this._initialState};
+      }
+    });
+  }
+
+  resetState(): void {
+    this.state = this._initialState;
   }
 
   getAll(): Observable<ILocation[]> {
@@ -56,8 +67,8 @@ export class PlacesService {
     return this.http.get<ILocation[]>(url);
   }
 
-  getGetInspired(): Observable<any> {
-    const url = `${environment.apiUrl}${this.auth.userData?.id}/getInspired`;
+  getGetInspired(forMe = false): Observable<any> {
+    const url = `${environment.apiUrl}${this.auth.userData?.id}/${forMe ? 'getUserBookmarks' : 'getInspired'}`;
     return this.http.get<any[]>(url).pipe(
       map((list: any[]) => {
         list = list.map(t => {

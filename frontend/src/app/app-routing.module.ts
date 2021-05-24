@@ -9,6 +9,7 @@ import {SearchComponent} from './pages/search/search.component';
 import {LoginComponent} from './pages/login/login.component';
 import {AuthGuard} from './guards/auth.guard';
 import {RegisterComponent} from './pages/register/register.component';
+import {MyBookmarksComponent} from './pages/my-bookmarks/my-bookmarks.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,10 @@ const routes: Routes = [
       {
         path: 'get-inspired',
         component: GetInspiredComponent
+      },
+      {
+        path: 'my-bookmarks',
+        component: MyBookmarksComponent
       },
     ]
   },

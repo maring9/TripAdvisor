@@ -1,4 +1,4 @@
-<nav>
+<nav *ngIf="placesService.state.city">
   <ul>
     <li *ngFor="let item of items">
       <a [class.active]="isActive(item.url)" [routerLink]="[item.url]">{{item.name}}</a>

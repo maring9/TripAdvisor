@@ -20,5 +20,4 @@ export class GetInspiredComponent implements OnInit {
         }
       );
   }
-
 }
