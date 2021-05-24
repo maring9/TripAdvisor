@@ -13,15 +13,16 @@ import {RegisterComponent} from './pages/register/register.component';
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    component: SearchComponent,
+    canActivate: [AuthGuard],
+    // redirectTo: '/places'
+  },
+  {
+    path: '',
     component: PageLayoutComponent,
     canActivate: [AuthGuard],
     children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        component: SearchComponent
-        // redirectTo: '/places'
-      },
       {
         path: 'places',
         component: PlacesComponent

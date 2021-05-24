@@ -1,0 +1,57 @@
+@import "src/css/vars";
+
+.submit-button {
+  all: unset;
+  background-color: #5F757D;
+  border-radius: 20px;
+  padding: 5px 15px;
+  color: #FFF;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+h1 {
+  color: $app-black;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.search {
+  background-color: #4D4D4D;
+  display: inline-block;
+  padding: 0 10px;
+  border-radius: 10px;
+  color: #FFF;
+}
+
+mat-icon {
+  transform: translateY(50%);
+  margin-right: 10px;
+}
+
+::ng-deep {
+  .mat-form-field-infix {
+    border-top: 0;
+  }
+
+  .mat-focused .mat-form-field-label {
+    color: #FFFFFF !important;
+  }
+
+  mat-label {
+    color: #a7a7a7;
+  }
+
+  .mat-input-element {
+    caret-color: #FFF;
+  }
+
+  .mat-form-field-ripple, .mat-form-field-underline {
+    background-color: #FFF !important;
+  }
+}
+
+.full-screen {
+  height: calc(100vh - 100px);
+}

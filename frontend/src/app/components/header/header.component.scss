@@ -1,13 +1,13 @@
 @import "src/css/vars";
 
 .vertical-line {
-  border-right: 2px solid $grey;
+  border-right: 2px solid $app-grey;
   margin-left: 15px;
   margin-right: 15px;
 }
 
 .my-container {
-  background-color: $black;
+  background-color: $app-black;
   font-size: 32px;
   padding: 10px 1em;
   white-space: nowrap;

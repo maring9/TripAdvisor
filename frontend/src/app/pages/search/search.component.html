@@ -1,13 +1,23 @@
-<form (submit)="onSubmit()" #f="ngForm">
-  <input [(ngModel)]="city" name="city">
-  <button>submit</button>
-</form>
-
-<!--<form class="example-form">-->
-<!--  <mat-form-field class="example-full-width">-->
-<!--    <mat-label>Telephone</mat-label>-->
-<!--    <span matPrefix>+1 &nbsp;</span>-->
-<!--    <input type="tel" matInput placeholder="555-555-1234">-->
-<!--    <mat-icon matSuffix>mode_edit</mat-icon>-->
-<!--  </mat-form-field>-->
-<!--</form>-->
+<div class="container">
+  <div class="row full-screen align-items-center">
+    <div class="col-12  justify-content-center">
+      <div>
+        <h1>Where to?</h1>
+      </div>
+      <form (submit)="onSubmit()" #f="ngForm">
+        <div class="container row justify-content-center">
+          <div class="search">
+            <mat-icon>search_icon</mat-icon>
+            <mat-form-field floatLabel="never">
+              <mat-label>search for a city</mat-label>
+              <input matInput [(ngModel)]="city" name="city">
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row justify-content-center pt-4">
+          <button class="submit-button">See your trip</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
